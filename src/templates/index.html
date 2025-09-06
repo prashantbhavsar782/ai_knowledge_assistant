@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Knowledge Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; padding: 20px; }
+        .chat-box { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .user { text-align: right; color: #0d6efd; }
+        .ai { text-align: left; color: #198754; }
+        .message { padding: 10px; margin: 10px 0; border-radius: 8px; }
+        .user .message { background-color: #e7f1ff; display: inline-block; }
+        .ai .message { background-color: #e0f7ea; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <h2 class="text-center mb-4">AI Knowledge Assistant</h2>
+
+        <form method="POST" action="/">
+            <div class="mb-3">
+                <input type="text" name="user_input" class="form-control" placeholder="Ask something..." required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Ask</button>
+            </div>
+        </form>
+
+        {% if user_input and response %}
+            <div class="user"><div class="message"><strong>You:</strong> {{ user_input }}</div></div>
+            <div class="ai"><div class="message"><strong>AI:</strong> {{ response }}</div></div>
+        {% endif %}
+    </div>
+</body>
+</html>
