@@ -1,0 +1,4 @@
+LangChain is a framework for developing applications powered by language models.
+FAISS is a library for efficient similarity search and clustering of dense vectors.
+Retrieval-Augmented Generation (RAG) is a technique that combines retrieval with generation.
+Generative AI can create new content such as text, images, audio, and video.
